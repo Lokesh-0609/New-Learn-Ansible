@@ -1,6 +1,6 @@
 - name: install MySql server package set up 
   hosts: all
-  becomes: yes
+  become: yes
   tasks:
     - name: install MySql server 
       ansible.builtin.dnf:
