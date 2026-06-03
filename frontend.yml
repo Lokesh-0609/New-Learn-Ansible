@@ -9,8 +9,8 @@
 
     - name: Copy ansible configuration file
       ansible.builtin.copy:
-      src:  nginx.conf
-      dest: /etc/nginx/nginx.conf 
+        src:  nginx.conf
+        dest: /etc/nginx/nginx.conf 
 
 # Since npm building  is failing we moved to download the direct compiled code 
 #   - name: Set up  Nodejs repo
