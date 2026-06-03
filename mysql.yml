@@ -1,6 +1,6 @@
 - name: install MySql server package set up 
   hosts: all
-  becomes: Yes
+  becomes: yes
   tasks:
     - name: install MySql server 
       ansible.builtin.dnf:
@@ -9,7 +9,7 @@
 
     - name: Start MySql
       ansible.builtin.systemd_service:
-      name: Started
+      name: started
       state: present
 
     - name: set up Root and password 
