@@ -13,17 +13,14 @@
         state: started
         enabled: yes
 
-    # - name: set up Root and password 
-    #   ansible.builtin.shell: |
-    #     mysql -u root -e "
-    #       CREATE USER 'root'@'%' IDENTIFIED BY 'RoboShop@1';
-    #       GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
-    #       ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';
-    #       FLUSH PRIVILEGES;
-    #     "
-    
-    
     - name: set up Root and password 
       ansible.builtin.shell: |
-        mysql -u root -p'CURRENT_PASSWORD' -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'; FLUSH PRIVILEGES;"
-
+        mysql -u root -e "
+          CREATE USER 'root'@'%' IDENTIFIED BY 'RoboShop@1';
+          GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+          ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';
+          FLUSH PRIVILEGES;
+        "
+    
+    
+    
