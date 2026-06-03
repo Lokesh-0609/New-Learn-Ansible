@@ -36,7 +36,7 @@
       ansible.builtin.unarchive:
         src: https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/frontend-compiled.zip
         dest: /usr/share/nginx/html
-        remote_Src: Yes  
+        remote_Src: yes  
 
 # Since npm build is failing, we moved to download the direct compiled code.
 #     - name: Build static code
@@ -48,7 +48,7 @@
       ansible.builtin.systemd_service:
         name: nginx
         state: restarted
-        enabled: Yes
+        enabled: yes
       
 
 
