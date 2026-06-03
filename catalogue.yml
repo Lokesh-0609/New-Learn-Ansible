@@ -44,18 +44,18 @@
 
     - name: Load App User
       ansible.builtin.shell: mysql -h mysql-dev.rdevopsb89.online -u root -pRoboShop@1 < db/app-user.sql
-      args:
-        chdir: /app
+        args:
+          chdir: /app
 
     - name: Load Master Data
       ansible.builtin.shell: mysql -h mysql-dev.rdevopsb89.online -u root -pRoboShop@1 catalogue < db/master-data.sql
-      args:
-        chdir: /app
+        args:
+          chdir: /app
 
     - name: Compile Application Code
       ansible.builtin.shell: go mod tidy && CGO_ENABLED=0 go build -o /app/catalogue .
-      args:
-        chdir: /app
+        args:
+          chdir: /app
 
     - name: Apply permission for application folder
       ansible.builtin.file:
