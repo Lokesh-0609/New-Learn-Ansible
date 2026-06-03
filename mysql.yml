@@ -12,7 +12,7 @@
         name: mysql
         state: present
         enabled: yes
-        
+
     - name: set up Root and password 
       ansible.builtin.shell: |
         mysql -u root -e "
