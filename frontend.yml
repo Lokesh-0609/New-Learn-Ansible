@@ -18,8 +18,8 @@
 #   
 #   - name: install nodejs 
 #     ansible.builtin.dnf:
-#     name: node js
-#     state: Present
+#       name: node js
+#       state: Present
 
     - name: Remove App content directory
       ansible.builtin.file:
