@@ -9,7 +9,7 @@
         shell: /bin/false
         create_home: no
 
-    - name: copy SystemD Service file
+    - name: copy SystemD Service file cp
       ansible.builtin.copy:
         src: catalogue.service
         dest: /etc/systemd/system/catalogue.service
